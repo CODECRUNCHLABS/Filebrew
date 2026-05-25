@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" role="img" aria-label="Filebrew — convert videos and images locally">
+  <defs>
+    <radialGradient id="bg-1" cx="20%" cy="0%" r="80%">
+      <stop offset="0%"   stop-color="#1c1c3a"/>
+      <stop offset="100%" stop-color="#0f0f10" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="bg-2" cx="90%" cy="100%" r="60%">
+      <stop offset="0%"   stop-color="#3a1c2a"/>
+      <stop offset="100%" stop-color="#0f0f10" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1920" height="1080" fill="#0f0f10"/>
+  <rect width="1920" height="1080" fill="url(#bg-1)"/>
+  <rect width="1920" height="1080" fill="url(#bg-2)"/>
+
+  <!-- OPEN SOURCE tag -->
+  <g transform="translate(120, 160)">
+    <rect width="290" height="44" rx="22" fill="#1a1a3a"/>
+    <text x="145" y="29" font-family="Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#b8c2ff" text-anchor="middle" letter-spacing="3">OPEN SOURCE · MIT</text>
+  </g>
+
+  <!-- Brand mark + wordmark -->
+  <g transform="translate(120, 270)">
+    <rect width="160" height="160" rx="36" fill="#2a4fd0"/>
+    <g fill="#ffffff">
+      <rect x="42" y="36" width="22" height="88" rx="3"/>
+      <rect x="42" y="36" width="80" height="22" rx="3"/>
+      <rect x="42" y="72" width="54" height="20" rx="3"/>
+    </g>
+  </g>
+  <text x="320" y="400" font-family="Helvetica, Arial, sans-serif" font-size="180" font-weight="900" fill="#ffffff" letter-spacing="-5">Filebrew</text>
+
+  <!-- Tagline -->
+  <text x="120" y="560" font-family="Helvetica, Arial, sans-serif" font-size="64" font-weight="500" fill="#dddddd">Convert videos &amp; images locally.</text>
+  <text x="120" y="640" font-family="Helvetica, Arial, sans-serif" font-size="32" fill="#999999">No upload to the cloud. No quotas. No watermarks.</text>
+
+  <!-- Format badges (right-side grid) -->
+  <g transform="translate(1290, 280)" font-family="Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#ffffff">
+    <g><rect width="130" height="54" rx="9" fill="#2a4fd0"/><text x="65" y="36" text-anchor="middle">MP4</text></g>
+    <g transform="translate(146,0)"><rect width="130" height="54" rx="9" fill="#0f9d58"/><text x="65" y="36" text-anchor="middle">WebM</text></g>
+    <g transform="translate(292,0)"><rect width="130" height="54" rx="9" fill="#666666"/><text x="65" y="36" text-anchor="middle">MOV</text></g>
+
+    <g transform="translate(0,78)"><rect width="130" height="54" rx="9" fill="#444444"/><text x="65" y="36" text-anchor="middle">MKV</text></g>
+    <g transform="translate(146,78)"><rect width="130" height="54" rx="9" fill="#e91e63"/><text x="65" y="36" text-anchor="middle">GIF</text></g>
+    <g transform="translate(292,78)"><rect width="130" height="54" rx="9" fill="#d04f8a"/><text x="65" y="36" text-anchor="middle">MP3</text></g>
+
+    <g transform="translate(0,156)"><rect width="130" height="54" rx="9" fill="#7e57c2"/><text x="65" y="36" text-anchor="middle">M4A</text></g>
+    <g transform="translate(146,156)"><rect width="130" height="54" rx="9" fill="#00897b"/><text x="65" y="36" text-anchor="middle">WAV</text></g>
+    <g transform="translate(292,156)"><rect width="130" height="54" rx="9" fill="#1976d2"/><text x="65" y="36" text-anchor="middle">FLAC</text></g>
+
+    <g transform="translate(0,234)"><rect width="130" height="54" rx="9" fill="#f57c00"/><text x="65" y="36" text-anchor="middle">JPG</text></g>
+    <g transform="translate(146,234)"><rect width="130" height="54" rx="9" fill="#2e7d32"/><text x="65" y="36" text-anchor="middle">PNG</text></g>
+    <g transform="translate(292,234)"><rect width="130" height="54" rx="9" fill="#0288d1"/><text x="65" y="36" text-anchor="middle">WebP</text></g>
+
+    <g transform="translate(0,312)"><rect width="130" height="54" rx="9" fill="#6a1b9a"/><text x="65" y="36" text-anchor="middle">AVIF</text></g>
+    <g transform="translate(146,312)"><rect width="130" height="54" rx="9" fill="#5d4037"/><text x="65" y="36" text-anchor="middle">BMP</text></g>
+    <g transform="translate(292,312)"><rect width="130" height="54" rx="9" fill="#37474f"/><text x="65" y="36" text-anchor="middle">TIFF</text></g>
+  </g>
+
+  <!-- Footer -->
+  <text x="120" y="980" font-family="Helvetica, Arial, sans-serif" font-size="28" fill="#888888">by Code Crunch Labs</text>
+  <text x="1800" y="980" font-family="Helvetica, Arial, sans-serif" font-size="26" fill="#666666" text-anchor="end">filebrew.vercel.app</text>
+</svg>
