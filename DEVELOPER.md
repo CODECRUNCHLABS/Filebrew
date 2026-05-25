@@ -1,7 +1,7 @@
 # For developers
 
-If you're going to develop this project, first read the development guide.
-It's not in this public repo — it lives in a private guide repository.
+To develop this project, first read the development guide.
+
 Read it before making changes.
 
 **Development, deployment and configuration guide:**
