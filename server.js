@@ -565,6 +565,20 @@ const server = http.createServer((req, res) => {
   if (parsed.pathname === '/video' || parsed.pathname === '/video.html') { servePage(res, 'video.html'); return; }
   if (parsed.pathname === '/image' || parsed.pathname === '/image.html') { servePage(res, 'image.html'); return; }
 
+  // favicons
+  if (parsed.pathname === '/favicon.svg') {
+    res.writeHead(200, { 'Content-Type': 'image/svg+xml', 'Cache-Control': 'public, max-age=86400' });
+    fs.createReadStream(path.join(__dirname, 'favicon.svg')).pipe(res); return;
+  }
+  if (parsed.pathname === '/favicon.ico') {
+    res.writeHead(200, { 'Content-Type': 'image/svg+xml', 'Cache-Control': 'public, max-age=86400' });
+    fs.createReadStream(path.join(__dirname, 'favicon.svg')).pipe(res); return;
+  }
+  if (parsed.pathname === '/apple-touch-icon.png') {
+    res.writeHead(200, { 'Content-Type': 'image/png', 'Cache-Control': 'public, max-age=86400' });
+    fs.createReadStream(path.join(__dirname, 'apple-touch-icon.png')).pipe(res); return;
+  }
+
   // api
   if (parsed.pathname === '/api/targets') {
     res.writeHead(200, { 'Content-Type': 'application/json' });
