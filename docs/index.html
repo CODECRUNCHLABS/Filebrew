@@ -184,31 +184,31 @@
   <style>
     :root {
       color-scheme: dark;
+      /* 3-color palette: bg, fg, accent.
+         Grays below are tonal shifts of bg, not separate brand colors. */
       --bg: #0f0f10;
-      --panel: #1a1a1d;
-      --panel-2: #1c1c1f;
-      --border: #2a2a2c;
-      --border-hover: #4a4a52;
-      --text: #eee;
+      --fg: #fafafa;
+      --accent: #6da8ff;
+      --panel: #15151a;
+      --panel-2: #1a1a20;
+      --border: #26262c;
+      --border-hover: var(--accent);
       --muted: #888;
       --dim: #666;
-      --link: #6da8ff;
-      --accent: #2a6fff;
     }
     * { box-sizing: border-box; }
     html, body { margin: 0; padding: 0; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       background:
-        radial-gradient(800px 600px at 20% -5%, #1c1c3a 0%, transparent 55%),
-        radial-gradient(900px 600px at 90% 20%, #3a1c2a 0%, transparent 50%),
+        radial-gradient(900px 600px at 90% 10%, rgba(109, 168, 255, 0.07) 0%, transparent 55%),
         var(--bg);
-      color: var(--text);
+      color: var(--fg);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
       min-height: 100vh;
     }
-    a { color: var(--link); text-decoration: none; }
+    a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
     code, pre, kbd {
       font-family: "SF Mono", Menlo, Consolas, monospace;
@@ -254,17 +254,18 @@
     .brand { font-weight: 700; font-size: 15px; letter-spacing: 0.3px; }
     .brand-tagline { font-weight: 400; font-size: 12px; color: var(--muted); margin-left: 6px; }
     .brand-tagline a { color: var(--muted); text-decoration: none; }
-    .brand-tagline a:hover { color: var(--text); text-decoration: underline; }
+    .brand-tagline a:hover { color: var(--fg); text-decoration: underline; }
     .nav-links { display: flex; gap: 22px; font-size: 14px; }
     .nav-links a { color: var(--muted); }
-    .nav-links a:hover { color: var(--text); text-decoration: none; }
+    .nav-links a:hover { color: var(--fg); text-decoration: none; }
 
     /* hero */
     .hero { padding: 24px 0 56px; text-align: center; }
     .hero .tag {
       display: inline-block;
-      background: #1a1a3a;
-      color: #b8c2ff;
+      background: rgba(109, 168, 255, 0.12);
+      color: var(--accent);
+      border: 1px solid rgba(109, 168, 255, 0.25);
       padding: 4px 12px;
       border-radius: 999px;
       font-size: 11px;
@@ -302,8 +303,8 @@
       transition: transform 0.1s, filter 0.1s, background 0.15s;
     }
     .btn:hover { text-decoration: none; transform: translateY(-1px); }
-    .btn-primary { background: var(--accent); color: #fff; }
-    .btn-primary:hover { filter: brightness(1.15); }
+    .btn-primary { background: var(--accent); color: var(--bg); }
+    .btn-primary:hover { filter: brightness(1.1); }
     .btn-secondary { background: #2a2a2e; color: #ddd; border: 1px solid var(--border); }
     .btn-secondary:hover { background: #34343a; }
 
@@ -317,7 +318,7 @@
     }
     h3 {
       font-size: 16px;
-      color: var(--text);
+      color: var(--fg);
       margin: 22px 0 8px;
       font-weight: 600;
     }
@@ -343,7 +344,9 @@
       font-size: 10px;
       padding: 3px 7px;
       border-radius: 4px;
-      color: #fff;
+      color: var(--accent);
+      background: rgba(109, 168, 255, 0.12);
+      border: 1px solid rgba(109, 168, 255, 0.25);
       font-weight: 600;
       letter-spacing: 0.3px;
     }
@@ -366,7 +369,7 @@
       border-bottom: 2px solid transparent;
       margin-bottom: -1px;
     }
-    .os-tab:hover { color: var(--text); }
+    .os-tab:hover { color: var(--fg); }
     .os-tab.active { color: #fff; border-bottom-color: var(--accent); }
     .os-pane { display: none; padding-top: 4px; }
     .os-pane.active { display: block; }
@@ -388,7 +391,7 @@
       overflow-x: auto;
     }
     .tree .c { color: var(--muted); }
-    .tree .d { color: #7ab4ff; }
+    .tree .d { color: var(--accent); }
 
     /* how-it-works */
     .hiw-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin-top: 14px; }
@@ -422,7 +425,7 @@
       line-height: 1;
       transition: transform 0.15s, color 0.15s;
     }
-    .faq-item[open] summary::after { transform: rotate(45deg); color: var(--text); }
+    .faq-item[open] summary::after { transform: rotate(45deg); color: var(--fg); }
     .faq-item summary h3 {
       margin: 0;
       font-size: 15px;
@@ -437,7 +440,7 @@
       font-size: 14px;
       line-height: 1.6;
     }
-    .faq-item p a { color: var(--link); }
+    .faq-item p a { color: var(--accent); }
 
     /* footer */
     footer {
@@ -449,7 +452,7 @@
       text-align: center;
     }
     footer a { color: var(--muted); }
-    footer a:hover { color: var(--text); }
+    footer a:hover { color: var(--fg); }
 
     /* tables — wrap in a scroll container on narrow screens */
     .table-wrap { overflow-x: auto; }
@@ -546,15 +549,15 @@
           <h3>Video &amp; Audio</h3>
           <p>Convert videos to MP4, WebM, MOV, MKV, or animated GIF. Extract audio to MP3, M4A, WAV, FLAC. H.264 sources remux instantly; everything else transcodes to H.264 for browser playback.</p>
           <div class="badges">
-            <span class="badge" style="background:#2a4fd0">MP4</span>
-            <span class="badge" style="background:#0f9d58">WebM</span>
-            <span class="badge" style="background:#666">MOV</span>
-            <span class="badge" style="background:#444">MKV</span>
-            <span class="badge" style="background:#e91e63">GIF</span>
-            <span class="badge" style="background:#d04f8a">MP3</span>
-            <span class="badge" style="background:#7e57c2">M4A</span>
-            <span class="badge" style="background:#00897b">WAV</span>
-            <span class="badge" style="background:#1976d2">FLAC</span>
+            <span class="badge">MP4</span>
+            <span class="badge">WebM</span>
+            <span class="badge">MOV</span>
+            <span class="badge">MKV</span>
+            <span class="badge">GIF</span>
+            <span class="badge">MP3</span>
+            <span class="badge">M4A</span>
+            <span class="badge">WAV</span>
+            <span class="badge">FLAC</span>
           </div>
         </div>
         <div class="conv-card">
@@ -562,12 +565,12 @@
           <h3>Image</h3>
           <p>Convert images to JPG, PNG, WebP, AVIF, BMP, or TIFF. Optional resize — thumbnail, small, medium, large, or custom pixel size. Aspect ratio always preserved.</p>
           <div class="badges">
-            <span class="badge" style="background:#f57c00">JPG</span>
-            <span class="badge" style="background:#2e7d32">PNG</span>
-            <span class="badge" style="background:#0288d1">WebP</span>
-            <span class="badge" style="background:#6a1b9a">AVIF</span>
-            <span class="badge" style="background:#5d4037">BMP</span>
-            <span class="badge" style="background:#37474f">TIFF</span>
+            <span class="badge">JPG</span>
+            <span class="badge">PNG</span>
+            <span class="badge">WebP</span>
+            <span class="badge">AVIF</span>
+            <span class="badge">BMP</span>
+            <span class="badge">TIFF</span>
           </div>
         </div>
       </div>
