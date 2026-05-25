@@ -1,0 +1,37 @@
+# ── Runtime data ──────────────────────────────────────────────────
+# All files inside the data/ runtime tree are user content and should
+# NOT be committed. Exception: anything named `test-opensource.<ext>`
+# is kept on purpose so the repo can ship reproducible sample inputs
+# / golden outputs for testing the converter.
+
+# input drop folders — ignore everything except test fixtures
+data/videos-to-convert/*
+data/audio-to-extract/*
+data/images-to-convert/*
+!data/videos-to-convert/test-opensource.*
+!data/audio-to-extract/test-opensource.*
+!data/images-to-convert/test-opensource.*
+
+# converted outputs — ignore files (but not dirs, so negations below work)
+data/converted/*/*
+!data/converted/*/test-opensource.*
+
+# upload staging — never committed
+data/uploads/
+
+# runtime log
+data/conversions.log
+
+# ── Node / OS / editors ───────────────────────────────────────────
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+.DS_Store
+Thumbs.db
+
+.vscode/
+.idea/
+*.swp
+*.swo

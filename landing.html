@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Filebrew — local media converter by Code Crunch Labs</title>
+  <style>
+    :root { color-scheme: dark; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      background:
+        radial-gradient(800px 600px at 20% 10%, #1c1c3a 0%, transparent 60%),
+        radial-gradient(900px 600px at 85% 90%, #3a1c1c 0%, transparent 60%),
+        #0f0f10;
+      color: #eee;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      padding: 32px 48px 0;
+      max-width: 1100px;
+      width: 100%;
+      margin: 0 auto;
+    }
+    .brand-title {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: #fff;
+    }
+    .brand-title .brand-tagline {
+      font-weight: 400;
+      font-size: 13px;
+      color: #888;
+      margin-left: 8px;
+    }
+    .brand-title .brand-tagline a { color: #888; text-decoration: none; }
+    .brand-title .brand-tagline a:hover { color: #ddd; text-decoration: underline; }
+    .brand-sub {
+      font-size: 13px;
+      color: #888;
+      margin-top: 6px;
+    }
+    .brand-sub a { color: #6da8ff; text-decoration: none; }
+    .brand-sub a:hover { text-decoration: underline; }
+    main {
+      flex: 1;
+      max-width: 1100px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    h1 {
+      font-size: 38px;
+      margin: 0 0 8px;
+      letter-spacing: -0.5px;
+      line-height: 1.15;
+    }
+    .lede {
+      color: #aaa;
+      font-size: 17px;
+      max-width: 640px;
+      line-height: 1.55;
+      margin: 0 0 40px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      background: #1a1a1d;
+      border: 1px solid #2a2a2c;
+      border-radius: 14px;
+      padding: 28px;
+      transition: transform 0.15s, border-color 0.15s, background 0.15s;
+    }
+    .card:hover {
+      transform: translateY(-2px);
+      border-color: #4a4a52;
+      background: #1f1f24;
+    }
+    .card-emoji {
+      font-size: 36px;
+      line-height: 1;
+      margin-bottom: 14px;
+    }
+    .card h2 {
+      font-size: 22px;
+      margin: 0 0 8px;
+      color: #fff;
+    }
+    .card p {
+      color: #999;
+      font-size: 14px;
+      line-height: 1.5;
+      margin: 0 0 16px;
+    }
+    .card .formats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .badge {
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      color: #fff;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+    footer {
+      padding: 24px 48px;
+      max-width: 1100px;
+      width: 100%;
+      margin: 0 auto;
+      color: #666;
+      font-size: 12px;
+      border-top: 1px solid #1f1f22;
+    }
+    footer a { color: #888; text-decoration: none; }
+    footer a:hover { color: #ccc; }
+    footer code {
+      background: #1a1a1d;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-size: 11px;
+    }
+    @media (max-width: 640px) {
+      header { padding: 22px 22px 0 !important; }
+      main { padding: 32px 22px !important; }
+      footer { padding: 22px !important; }
+      h1 { font-size: 28px !important; }
+      .lede { font-size: 15px !important; margin-bottom: 28px !important; }
+      .card { padding: 20px !important; }
+      .card h2 { font-size: 19px !important; }
+      .card-emoji { font-size: 30px !important; }
+      .grid { gap: 14px !important; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand-title">Filebrew <span class="brand-tagline">by <a href="https://codecrunchlabs.vercel.app" target="_blank" rel="noopener">Code Crunch Labs</a></span></div>
+    <div class="brand-sub">Filebrew · open-source local media converter by <a href="https://codecrunchlabs.vercel.app" target="_blank" rel="noopener">Code Crunch Labs</a></div>
+  </header>
+
+  <main>
+    <h1>Pick a converter</h1>
+    <p class="lede">
+      Convert videos and images locally — no upload to a cloud service, no quotas, no watermarks.
+      Drag a file in, pick the output format, get the converted file back.
+    </p>
+
+    <div class="grid">
+      <a class="card" href="/video">
+        <div class="card-emoji">🎬</div>
+        <h2>Video &amp; Audio Converter</h2>
+        <p>
+          Convert videos to MP4, WebM, MOV, MKV, or animated GIF. Extract audio to MP3, M4A, WAV, or FLAC.
+          H.264 sources are remuxed instantly; anything else transcodes to H.264 for browser playback.
+        </p>
+        <div class="formats">
+          <span class="badge" style="background:#2a4fd0">MP4</span>
+          <span class="badge" style="background:#0f9d58">WebM</span>
+          <span class="badge" style="background:#666">MOV</span>
+          <span class="badge" style="background:#444">MKV</span>
+          <span class="badge" style="background:#e91e63">GIF</span>
+          <span class="badge" style="background:#d04f8a">MP3</span>
+          <span class="badge" style="background:#7e57c2">M4A</span>
+          <span class="badge" style="background:#00897b">WAV</span>
+          <span class="badge" style="background:#1976d2">FLAC</span>
+        </div>
+      </a>
+
+      <a class="card" href="/image">
+        <div class="card-emoji">🖼️</div>
+        <h2>Image Converter</h2>
+        <p>
+          Convert images between JPG, PNG, WebP, AVIF, BMP, and TIFF. Optionally resize to a thumbnail,
+          a max-edge dimension, or a custom pixel size — aspect ratio is preserved automatically.
+        </p>
+        <div class="formats">
+          <span class="badge" style="background:#f57c00">JPG</span>
+          <span class="badge" style="background:#2e7d32">PNG</span>
+          <span class="badge" style="background:#0288d1">WebP</span>
+          <span class="badge" style="background:#6a1b9a">AVIF</span>
+          <span class="badge" style="background:#5d4037">BMP</span>
+          <span class="badge" style="background:#37474f">TIFF</span>
+        </div>
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    MIT licensed · <a href="https://github.com/CODE-CRUNCH-LABS/Filebrew" target="_blank" rel="noopener">Fork on GitHub</a> ·
+    requires <code>node</code> + <code>ffmpeg</code>
+  </footer>
+</body>
+</html>

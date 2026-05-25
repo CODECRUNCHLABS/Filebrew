@@ -1,0 +1,29 @@
+{
+  "name": "filebrew",
+  "version": "0.1.0",
+  "description": "Filebrew — open-source local media converter. Drag a video into the browser, get MP4, WebM, MOV, MKV, GIF, MP3, M4A, WAV, or FLAC out. Runs entirely on your machine via Node + ffmpeg.",
+  "license": "MIT",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "keywords": [
+    "filebrew",
+    "ffmpeg",
+    "video",
+    "audio",
+    "image",
+    "converter",
+    "mp4",
+    "mp3",
+    "webm",
+    "webp",
+    "avif",
+    "local",
+    "self-hosted",
+    "privacy"
+  ]
+}

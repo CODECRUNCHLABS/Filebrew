@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- ─── PRIMARY SEO ─────────────────────────────────────────────────── -->
+  <title>Filebrew — Free Local Video &amp; Image Converter | MOV to MP4, MP3, WebP, AVIF (Open Source)</title>
+  <meta name="title" content="Filebrew — Free Local Video &amp; Image Converter | MOV to MP4, MP3, WebP, AVIF (Open Source)" />
+  <meta name="description" content="Free, open-source local video and image converter. Convert MOV to MP4, video to MP3, images to JPG/PNG/WebP/AVIF, and resize images — all on your own machine. No upload to the cloud, no quotas, no watermarks, no signup. Built on Node.js + ffmpeg. Works on macOS, Windows, and Linux. MIT licensed." />
+  <meta name="keywords" content="filebrew, filebrew converter, filebrew media converter, video converter, mov to mp4, mov to mp4 converter, free video converter, open source video converter, local video converter, convert video to mp3, mp4 to mp3, ffmpeg converter, ffmpeg gui, image converter, png to webp, jpg to webp, avif converter, webp converter, image resize tool, online video converter alternative, no upload video converter, privacy video converter, self-hosted converter, batch video converter, drag and drop video converter, browser video converter, extract audio from video, screen recording to mp4, hevc to h264, video to gif, mp4 converter, image format converter, free image converter" />
+  <meta name="author" content="Code Crunch Labs" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow" />
+  <meta name="bingbot" content="index, follow" />
+  <meta name="language" content="English" />
+  <meta name="rating" content="general" />
+  <meta name="distribution" content="global" />
+  <meta name="revisit-after" content="7 days" />
+  <link rel="canonical" href="https://filebrew.vercel.app/" />
+
+  <!-- ─── OPEN GRAPH (Facebook, LinkedIn, Slack, Discord, iMessage) ───── -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://filebrew.vercel.app/" />
+  <meta property="og:title" content="Filebrew — Free Local Video &amp; Image Converter (Open Source)" />
+  <meta property="og:description" content="Convert MOV to MP4, extract MP3, convert images to WebP/AVIF, resize images. All locally on your machine — no upload, no quotas, no watermarks. Free, open source, MIT licensed." />
+  <meta property="og:image" content="https://filebrew.vercel.app/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Filebrew dashboard with format pills for MP4, WebM, MP3, JPG, PNG, WebP, AVIF" />
+  <meta property="og:site_name" content="Filebrew" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- ─── TWITTER CARD ────────────────────────────────────────────────── -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://filebrew.vercel.app/" />
+  <meta name="twitter:title" content="Filebrew — Free Local Video &amp; Image Converter" />
+  <meta name="twitter:description" content="Convert MOV to MP4, extract MP3, convert images locally. No upload, no quotas, no watermarks. Open source MIT." />
+  <meta name="twitter:image" content="https://filebrew.vercel.app/og-image.png" />
+  <meta name="twitter:image:alt" content="Filebrew dashboard" />
+
+  <!-- ─── THEME, ICONS, PWA ───────────────────────────────────────────── -->
+  <meta name="theme-color" content="#0f0f10" />
+  <meta name="msapplication-TileColor" content="#0f0f10" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Filebrew" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="alternate icon" href="favicon.ico" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+  <!-- ─── STRUCTURED DATA: SoftwareApplication ────────────────────────── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Filebrew",
+    "alternateName": ["Filebrew Media Converter", "Code Crunch Labs Converter"],
+    "operatingSystem": "macOS, Windows, Linux",
+    "applicationCategory": "MultimediaApplication",
+    "applicationSubCategory": "Video Converter",
+    "softwareVersion": "0.1.0",
+    "license": "https://opensource.org/licenses/MIT",
+    "url": "https://filebrew.vercel.app/",
+    "downloadUrl": "https://github.com/CODE-CRUNCH-LABS/Filebrew",
+    "codeRepository": "https://github.com/CODE-CRUNCH-LABS/Filebrew",
+    "description": "Free, open-source local video and image converter. Convert MOV to MP4, extract MP3 from video, convert and resize images, all on your own machine. Built on Node.js + ffmpeg. Works on macOS, Windows, and Linux. MIT licensed.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "ratingCount": "1",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "featureList": [
+      "Convert video to MP4, WebM, MOV, MKV, animated GIF",
+      "Extract audio to MP3, M4A, WAV, FLAC",
+      "Convert images to JPG, PNG, WebP, AVIF, BMP, TIFF",
+      "Automatic image resizing with preserved aspect ratio",
+      "Drag-and-drop browser interface",
+      "Watched-folder batch conversion",
+      "HTTP range-request streaming for multi-gigabyte files",
+      "Zero npm dependencies — pure Node.js + ffmpeg",
+      "Runs entirely locally — no upload to the cloud, no quotas, no watermarks",
+      "Runtime ffmpeg encoder detection",
+      "Cross-platform: macOS, Windows, Linux"
+    ],
+    "screenshot": "https://filebrew.vercel.app/og-image.png"
+  }
+  </script>
+
+  <!-- ─── STRUCTURED DATA: Organization ───────────────────────────────── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Code Crunch Labs",
+    "url": "https://codecrunchlabs.vercel.app/",
+    "logo": "https://filebrew.vercel.app/og-image.png",
+    "description": "Open-source local-first developer tools.",
+    "sameAs": [
+      "https://github.com/CODE-CRUNCH-LABS/Filebrew"
+    ]
+  }
+  </script>
+
+  <!-- ─── STRUCTURED DATA: BreadcrumbList ─────────────────────────────── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://filebrew.vercel.app/" },
+      { "@type": "ListItem", "position": 2, "name": "Install", "item": "https://filebrew.vercel.app/#install" },
+      { "@type": "ListItem", "position": 3, "name": "Usage", "item": "https://filebrew.vercel.app/#usage" },
+      { "@type": "ListItem", "position": 4, "name": "FAQ",  "item": "https://filebrew.vercel.app/#faq" }
+    ]
+  }
+  </script>
+
+  <!-- ─── STRUCTURED DATA: FAQPage (matches visible FAQ below) ────────── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is Filebrew free?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. It is 100% free and open-source under the MIT license. There are no quotas, watermarks, paywalls, or subscription fees." }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it upload my files to the cloud?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. Everything runs locally on your machine. The browser interface talks to a Node.js server on localhost. Your files never leave your computer." }
+      },
+      {
+        "@type": "Question",
+        "name": "What operating systems does it support?",
+        "acceptedAnswer": { "@type": "Answer", "text": "macOS, Windows, and Linux. It requires Node.js 16 or later and ffmpeg + ffprobe installed on your system." }
+      },
+      {
+        "@type": "Question",
+        "name": "What video and audio formats can it convert?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Video output: MP4, WebM, MOV, MKV, and animated GIF. Audio output: MP3, M4A, WAV, and FLAC. Input accepts essentially every format ffmpeg can read (MP4, MOV, WebM, MKV, AVI, M4V, FLV, WMV, 3GP, TS, MP3, M4A, WAV, AAC, FLAC, OGG, OPUS, WMA, and more)." }
+      },
+      {
+        "@type": "Question",
+        "name": "What image formats can it convert?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Image output: JPG, PNG, WebP, AVIF, BMP, TIFF. Input: JPG, JPEG, PNG, WebP, AVIF, GIF, BMP, TIFF, HEIC, HEIF." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can it resize images automatically?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. The image converter has preset sizes (Thumbnail 200 px, Small 480 px, Medium 800 px, Large 1920 px) plus a custom pixel size option. Aspect ratio is always preserved automatically." }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I install it?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Install Node.js and ffmpeg. Clone the repository. Run npm start. Open http://localhost:3000 in your browser. Detailed per-OS instructions for macOS, Windows, and Linux are in the Install section above." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I run it on a Raspberry Pi or home server?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Anywhere Node.js 16+ and ffmpeg run, the converter runs. Bind the server to your LAN by setting the PORT environment variable and use it from your phone or another laptop." }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it convert MOV from iPhone screen recordings to MP4 for the web?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. iPhone screen recordings are typically HEVC inside a MOV container. The converter detects HEVC and transcodes to H.264 + AAC in an MP4 container so the result plays in Chrome, Firefox, Safari, and Edge." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it really free with no catch?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. MIT license, source code on GitHub. Fork it, modify it, ship it commercially — no obligation back to the project." }
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0f0f10;
+      --panel: #1a1a1d;
+      --panel-2: #1c1c1f;
+      --border: #2a2a2c;
+      --border-hover: #4a4a52;
+      --text: #eee;
+      --muted: #888;
+      --dim: #666;
+      --link: #6da8ff;
+      --accent: #2a6fff;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background:
+        radial-gradient(800px 600px at 20% -5%, #1c1c3a 0%, transparent 55%),
+        radial-gradient(900px 600px at 90% 20%, #3a1c2a 0%, transparent 50%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    code, pre, kbd {
+      font-family: "SF Mono", Menlo, Consolas, monospace;
+      font-size: 0.92em;
+    }
+    pre {
+      background: #0a0a0b;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 18px;
+      overflow-x: auto;
+      line-height: 1.55;
+      margin: 12px 0;
+    }
+    code { background: #1a1a1d; padding: 2px 6px; border-radius: 3px; color: #d8d8e0; }
+    pre code { background: none; padding: 0; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0;
+      font-size: 14px;
+    }
+    th, td {
+      padding: 10px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    th { color: var(--muted); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+    tr:last-child td { border-bottom: 0; }
+
+    /* layout */
+    .container { max-width: 980px; margin: 0 auto; padding: 0 28px; }
+
+    /* nav */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 0;
+      border-bottom: 1px solid #1a1a1d;
+      margin-bottom: 48px;
+    }
+    .brand { font-weight: 700; font-size: 15px; letter-spacing: 0.3px; }
+    .brand-tagline { font-weight: 400; font-size: 12px; color: var(--muted); margin-left: 6px; }
+    .brand-tagline a { color: var(--muted); text-decoration: none; }
+    .brand-tagline a:hover { color: var(--text); text-decoration: underline; }
+    .nav-links { display: flex; gap: 22px; font-size: 14px; }
+    .nav-links a { color: var(--muted); }
+    .nav-links a:hover { color: var(--text); text-decoration: none; }
+
+    /* hero */
+    .hero { padding: 24px 0 56px; text-align: center; }
+    .hero .tag {
+      display: inline-block;
+      background: #1a1a3a;
+      color: #b8c2ff;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .hero h1 {
+      font-size: clamp(34px, 6vw, 56px);
+      line-height: 1.05;
+      letter-spacing: -1px;
+      margin: 0 0 18px;
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero p.lede {
+      font-size: 18px;
+      color: #aaa;
+      max-width: 620px;
+      margin: 0 auto 28px;
+      line-height: 1.55;
+    }
+    .ctas { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 22px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.1s, filter 0.1s, background 0.15s;
+    }
+    .btn:hover { text-decoration: none; transform: translateY(-1px); }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { filter: brightness(1.15); }
+    .btn-secondary { background: #2a2a2e; color: #ddd; border: 1px solid var(--border); }
+    .btn-secondary:hover { background: #34343a; }
+
+    /* sections */
+    section.block { padding: 36px 0; border-top: 1px solid #1a1a1d; }
+    section.block:first-of-type { border-top: 0; }
+    h2 {
+      font-size: 26px;
+      letter-spacing: -0.4px;
+      margin: 0 0 18px;
+    }
+    h3 {
+      font-size: 16px;
+      color: var(--text);
+      margin: 22px 0 8px;
+      font-weight: 600;
+    }
+
+    /* converter card grid */
+    .converter-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 16px;
+      margin: 12px 0;
+    }
+    .conv-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+    }
+    .conv-card-emoji { font-size: 28px; line-height: 1; margin-bottom: 10px; }
+    .conv-card h3 { margin: 0 0 6px; font-size: 17px; }
+    .conv-card p { color: #999; font-size: 14px; margin: 0 0 14px; }
+    .badges { display: flex; flex-wrap: wrap; gap: 5px; }
+    .badge {
+      font-size: 10px;
+      padding: 3px 7px;
+      border-radius: 4px;
+      color: #fff;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+
+    /* OS tabs */
+    .os-tabs {
+      display: flex;
+      gap: 4px;
+      margin: 14px 0 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .os-tab {
+      padding: 10px 18px;
+      cursor: pointer;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 500;
+      border: 0;
+      background: none;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+    }
+    .os-tab:hover { color: var(--text); }
+    .os-tab.active { color: #fff; border-bottom-color: var(--accent); }
+    .os-pane { display: none; padding-top: 4px; }
+    .os-pane.active { display: block; }
+
+    /* steps */
+    ol.steps { padding-left: 20px; }
+    ol.steps li { margin: 10px 0; }
+
+    /* file tree */
+    .tree {
+      background: #0a0a0b;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 18px 22px;
+      font-family: "SF Mono", Menlo, Consolas, monospace;
+      font-size: 13px;
+      line-height: 1.7;
+      color: #ccc;
+      overflow-x: auto;
+    }
+    .tree .c { color: var(--muted); }
+    .tree .d { color: #7ab4ff; }
+
+    /* how-it-works */
+    .hiw-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin-top: 14px; }
+    .hiw-item { background: var(--panel-2); border: 1px solid var(--border); border-radius: 10px; padding: 16px; }
+    .hiw-item h4 { margin: 0 0 6px; font-size: 14px; color: #fff; }
+    .hiw-item p { margin: 0; color: #999; font-size: 13px; line-height: 1.5; }
+
+    /* FAQ accordion */
+    .faq-list { display: flex; flex-direction: column; gap: 8px; }
+    .faq-item {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 4px 18px;
+    }
+    .faq-item summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 14px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      position: relative;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after {
+      content: "+";
+      margin-left: auto;
+      color: var(--muted);
+      font-size: 20px;
+      line-height: 1;
+      transition: transform 0.15s, color 0.15s;
+    }
+    .faq-item[open] summary::after { transform: rotate(45deg); color: var(--text); }
+    .faq-item summary h3 {
+      margin: 0;
+      font-size: 15px;
+      font-weight: 600;
+      color: #fff;
+      flex: 1;
+    }
+    .faq-item p {
+      margin: 0 0 16px;
+      padding-top: 4px;
+      color: #aaa;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .faq-item p a { color: var(--link); }
+
+    /* footer */
+    footer {
+      margin-top: 64px;
+      padding: 28px 0;
+      border-top: 1px solid #1a1a1d;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    footer a { color: var(--muted); }
+    footer a:hover { color: var(--text); }
+
+    /* tables — wrap in a scroll container on narrow screens */
+    .table-wrap { overflow-x: auto; }
+    .table-wrap table { min-width: 480px; }
+
+    /* tablet */
+    @media (max-width: 820px) {
+      .container { padding: 0 22px; }
+      .hero h1 { font-size: clamp(28px, 5vw, 44px); }
+      .hero p.lede { font-size: 16px; }
+      .converter-grid { grid-template-columns: 1fr; }
+      .hiw-list { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* mobile */
+    @media (max-width: 540px) {
+      .container { padding: 0 16px; }
+      nav {
+        margin-bottom: 24px;
+        padding: 16px 0;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      .brand { font-size: 14px; }
+      .nav-links {
+        gap: 14px;
+        font-size: 13px;
+        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 4px;
+      }
+      .hero { padding-top: 4px; padding-bottom: 36px; }
+      .hero h1 { font-size: 28px; line-height: 1.1; }
+      .hero p.lede { font-size: 15px; }
+      .ctas { flex-direction: column; align-items: stretch; }
+      .btn { justify-content: center; }
+      h2 { font-size: 22px; }
+      section.block { padding: 28px 0; }
+      .conv-card { padding: 18px; }
+      .conv-card h3 { font-size: 16px; }
+      .conv-card p { font-size: 13px; }
+      .hiw-list { grid-template-columns: 1fr; gap: 10px; }
+      .hiw-item { padding: 14px; }
+      th, td { padding: 8px 10px; font-size: 13px; }
+      pre { padding: 12px 14px; font-size: 12px; }
+      .tree { padding: 14px 16px; font-size: 11px; }
+      .os-tab { padding: 10px 14px; font-size: 13px; }
+      .faq-item summary h3 { font-size: 14px; }
+      .faq-item p { font-size: 13px; }
+      footer { font-size: 12px; padding: 22px 0; }
+    }
+
+    /* very narrow phones */
+    @media (max-width: 380px) {
+      .hero h1 { font-size: 24px; }
+      .badges .badge { font-size: 9px; padding: 2px 5px; }
+      .os-tab { padding: 9px 10px; font-size: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <div class="brand">Filebrew <span class="brand-tagline">by <a href="https://codecrunchlabs.vercel.app" target="_blank" rel="noopener">Code Crunch Labs</a></span></div>
+      <div class="nav-links">
+        <a href="#install">Install</a>
+        <a href="#usage">Usage</a>
+        <a href="#ide">IDE</a>
+        <a href="#faq">FAQ</a>
+        <a href="https://github.com/CODE-CRUNCH-LABS/Filebrew" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <span class="tag">Open Source · MIT</span>
+      <h1>Convert videos &amp; images locally.</h1>
+      <p class="lede">
+        No upload to the cloud. No quotas. No watermarks. Drag a file into your browser,
+        pick the output format, get the converted file back.
+      </p>
+      <div class="ctas">
+        <a class="btn btn-primary" href="#install">Get started →</a>
+        <a class="btn btn-secondary" href="https://github.com/" target="_blank" rel="noopener">⑃ Fork on GitHub</a>
+      </div>
+    </header>
+
+    <section class="block">
+      <h2>Two converters in one app</h2>
+      <p style="color:#999;margin-top:0">After install, open <code>http://localhost:3000</code> and pick one:</p>
+      <div class="converter-grid">
+        <div class="conv-card">
+          <div class="conv-card-emoji">🎬</div>
+          <h3>Video &amp; Audio</h3>
+          <p>Convert videos to MP4, WebM, MOV, MKV, or animated GIF. Extract audio to MP3, M4A, WAV, FLAC. H.264 sources remux instantly; everything else transcodes to H.264 for browser playback.</p>
+          <div class="badges">
+            <span class="badge" style="background:#2a4fd0">MP4</span>
+            <span class="badge" style="background:#0f9d58">WebM</span>
+            <span class="badge" style="background:#666">MOV</span>
+            <span class="badge" style="background:#444">MKV</span>
+            <span class="badge" style="background:#e91e63">GIF</span>
+            <span class="badge" style="background:#d04f8a">MP3</span>
+            <span class="badge" style="background:#7e57c2">M4A</span>
+            <span class="badge" style="background:#00897b">WAV</span>
+            <span class="badge" style="background:#1976d2">FLAC</span>
+          </div>
+        </div>
+        <div class="conv-card">
+          <div class="conv-card-emoji">🖼️</div>
+          <h3>Image</h3>
+          <p>Convert images to JPG, PNG, WebP, AVIF, BMP, or TIFF. Optional resize — thumbnail, small, medium, large, or custom pixel size. Aspect ratio always preserved.</p>
+          <div class="badges">
+            <span class="badge" style="background:#f57c00">JPG</span>
+            <span class="badge" style="background:#2e7d32">PNG</span>
+            <span class="badge" style="background:#0288d1">WebP</span>
+            <span class="badge" style="background:#6a1b9a">AVIF</span>
+            <span class="badge" style="background:#5d4037">BMP</span>
+            <span class="badge" style="background:#37474f">TIFF</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="install">
+      <h2>1. Install dependencies</h2>
+      <p style="color:#999;margin-top:0">You need <strong>Node.js 16+</strong> and <strong>ffmpeg + ffprobe</strong> on your <code>PATH</code>.</p>
+
+      <div class="os-tabs" role="tablist" aria-label="Install instructions by operating system">
+        <button class="os-tab active" data-os="mac" type="button" role="tab" aria-selected="true" aria-controls="os-pane-mac" id="os-tab-mac">macOS</button>
+        <button class="os-tab" data-os="win" type="button" role="tab" aria-selected="false" aria-controls="os-pane-win" id="os-tab-win">Windows</button>
+        <button class="os-tab" data-os="linux" type="button" role="tab" aria-selected="false" aria-controls="os-pane-linux" id="os-tab-linux">Linux</button>
+      </div>
+
+      <div class="os-pane active" data-os="mac" role="tabpanel" id="os-pane-mac" aria-labelledby="os-tab-mac">
+        <p>The easiest path is via <a href="https://brew.sh" target="_blank" rel="noopener">Homebrew</a>:</p>
+<pre><code>brew install node ffmpeg</code></pre>
+        <p>If you don't have Homebrew yet, the install command is one line — copy it from <a href="https://brew.sh" target="_blank" rel="noopener">brew.sh</a>.</p>
+      </div>
+
+      <div class="os-pane" data-os="win" role="tabpanel" id="os-pane-win" aria-labelledby="os-tab-win">
+        <p>Use <a href="https://learn.microsoft.com/en-us/windows/package-manager/winget/" target="_blank" rel="noopener">winget</a> (preinstalled on Windows 10/11):</p>
+<pre><code>winget install OpenJS.NodeJS
+winget install Gyan.FFmpeg</code></pre>
+        <p>Alternatively, download installers from <a href="https://nodejs.org" target="_blank" rel="noopener">nodejs.org</a> and <a href="https://ffmpeg.org/download.html" target="_blank" rel="noopener">ffmpeg.org</a>. For ffmpeg, extract the ZIP and add the <code>bin/</code> folder to your <code>PATH</code> (Search → "Edit the system environment variables").</p>
+        <p>Verify both work in a new terminal:</p>
+<pre><code>node --version
+ffmpeg -version</code></pre>
+      </div>
+
+      <div class="os-pane" data-os="linux" role="tabpanel" id="os-pane-linux" aria-labelledby="os-tab-linux">
+        <p>Debian / Ubuntu:</p>
+<pre><code>sudo apt update &amp;&amp; sudo apt install -y nodejs npm ffmpeg</code></pre>
+        <p>Fedora / RHEL:</p>
+<pre><code>sudo dnf install -y nodejs ffmpeg</code></pre>
+        <p>Arch:</p>
+<pre><code>sudo pacman -S nodejs npm ffmpeg</code></pre>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>2. Get the code &amp; run it</h2>
+      <ol class="steps">
+        <li>
+          On <a href="https://github.com/CODE-CRUNCH-LABS/Filebrew" target="_blank" rel="noopener">GitHub</a>, click <strong>Fork</strong> to make your own copy of the repo.
+        </li>
+        <li>Clone your fork and start the server:
+<pre><code>git clone https://github.com/&lt;your-username&gt;/code-crunch-labs-converter
+cd localvid-1
+npm start</code></pre>
+        </li>
+        <li>Open <strong><a href="http://localhost:3000" target="_blank" rel="noopener">http://localhost:3000</a></strong> in your browser. Pick <em>Video &amp; Audio</em> or <em>Image</em> from the landing page.</li>
+        <li>To stop the server, press <kbd>Ctrl+C</kbd> in the terminal.</li>
+      </ol>
+      <p style="color:#999"><strong>No <code>npm install</code> needed.</strong> The project has zero npm dependencies — everything uses Node built-ins.</p>
+    </section>
+
+    <section class="block" id="usage">
+      <h2>3. Use it</h2>
+
+      <h3>Method A — Browser (drag-and-drop)</h3>
+      <ol class="steps">
+        <li>Open <code>http://localhost:3000</code>.</li>
+        <li>Pick <em>Video &amp; Audio Converter</em> or <em>Image Converter</em>.</li>
+        <li><em>Image only:</em> choose a resize option at the top (Original / Thumbnail / Small / Medium / Large / Custom).</li>
+        <li><strong>Drag</strong> a file from Finder / Explorer onto the colored format pill (e.g., a <code>.mov</code> onto <strong>MP4</strong>, or a <code>.png</code> onto <strong>WebP</strong>).</li>
+        <li>Or <strong>click</strong> any pill to open your computer's file picker.</li>
+        <li>Watch the <em>Processing</em> panel — upload → convert → done. The converted file appears in <em>Library</em> and plays in the right pane when clicked.</li>
+      </ol>
+
+      <h3>Method B — Drop into a watched folder (batch / no-browser)</h3>
+      <div class="table-wrap">
+      <table>
+        <thead><tr><th>Drop file here</th><th>Converts to</th><th>Output lands in</th></tr></thead>
+        <tbody>
+          <tr><td><code>data/videos-to-convert/</code></td><td>MP4 (browser-safe H.264 + AAC)</td><td><code>data/converted/mp4/</code></td></tr>
+          <tr><td><code>data/audio-to-extract/</code></td><td>MP3 (192 kbps)</td><td><code>data/converted/mp3/</code></td></tr>
+          <tr><td><code>data/images-to-convert/</code></td><td>JPG (high quality, original size)</td><td><code>data/converted/jpg/</code></td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p style="color:#999">A polling watcher checks every second. Files must have a stable size for 3 seconds before they're picked up, so partially-copied or actively-recording files are never touched. For non-default formats or image resizing, use the browser UI.</p>
+    </section>
+
+    <section class="block" id="ide">
+      <h2>4. Open it in your IDE</h2>
+      <p style="color:#999;margin-top:0">Most editors just need you to point them at the cloned folder. No project-specific extensions or settings are required.</p>
+      <div class="table-wrap">
+      <table>
+        <thead><tr><th>Editor</th><th>How</th></tr></thead>
+        <tbody>
+          <tr><td><strong>VS Code</strong></td><td><code>code localvid-1</code> or <em>File → Open Folder…</em></td></tr>
+          <tr><td><strong>Cursor</strong></td><td><code>cursor localvid-1</code> or <em>File → Open Folder…</em></td></tr>
+          <tr><td><strong>JetBrains</strong> (WebStorm, IntelliJ)</td><td><em>File → Open…</em> → select the folder</td></tr>
+          <tr><td><strong>Sublime Text</strong></td><td><code>subl localvid-1</code> or <em>File → Open…</em></td></tr>
+          <tr><td><strong>Neovim / Vim</strong></td><td><code>cd localvid-1 &amp;&amp; nvim .</code></td></tr>
+          <tr><td><strong>Anything else</strong></td><td>Just open the folder — it's all vanilla files</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p style="color:#999"><strong>VS Code:</strong> if the <code>code</code> shell command isn't found, open VS Code → <kbd>⌘⇧P</kbd> (Mac) / <kbd>Ctrl+Shift+P</kbd> (Win/Linux) → search <em>"Shell Command: Install 'code' command in PATH"</em>.</p>
+      <p style="color:#999"><strong>Cursor:</strong> same procedure via <kbd>Cmd/Ctrl+Shift+P</kbd> → <em>"Shell Command: Install 'cursor' command"</em>.</p>
+      <p style="color:#999">Edit <code>server.js</code> or any <code>.html</code> file, then refresh the browser. No build step, no transpile, no bundler.</p>
+    </section>
+
+    <section class="block" id="storage">
+      <h2>Where files are stored</h2>
+      <p style="color:#999;margin-top:0">Everything lives under a single <code>data/</code> folder (auto-created on first run, or wherever you point <code>DATA_DIR=</code>):</p>
+<div class="tree">
+data/<br>
+├── <span class="c">conversions.log</span>          <span class="c"># append-only log</span><br>
+├── <span class="d">videos-to-convert/</span>         <span class="c"># drop folder → MP4</span><br>
+├── <span class="d">audio-to-extract/</span>          <span class="c"># drop folder → MP3</span><br>
+├── <span class="d">images-to-convert/</span>         <span class="c"># drop folder → JPG</span><br>
+├── <span class="d">uploads/</span>                   <span class="c"># browser-upload staging</span><br>
+│   └── <span class="d">&lt;format&gt;/</span>            <span class="c"># mp4/, webp/, mp3/, …</span><br>
+└── <span class="d">converted/</span>                 <span class="c"># all output files</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;├── <span class="d">mp4/</span>  <span class="d">webm/</span>  <span class="d">mov/</span>  <span class="d">mkv/</span>  <span class="d">gif/</span>     <span class="c"># video</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;├── <span class="d">mp3/</span>  <span class="d">m4a/</span>   <span class="d">wav/</span>  <span class="d">flac/</span>            <span class="c"># audio</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;└── <span class="d">jpg/</span>  <span class="d">png/</span>   <span class="d">webp/</span> <span class="d">avif/</span> <span class="d">bmp/</span> <span class="d">tiff/</span>  <span class="c"># image</span><br>
+</div>
+      <p style="color:#999">Override the location with the <code>DATA_DIR</code> env var:</p>
+<pre><code><span style="color:#777"># macOS / Linux</span>
+DATA_DIR=/Volumes/External/converter npm start
+
+<span style="color:#777"># Windows (PowerShell)</span>
+$env:DATA_DIR="D:\converter"; npm start</code></pre>
+      <p style="color:#999">Resized images get a <code>-&lt;size&gt;px</code> suffix (e.g. <code>photo-800px.jpg</code>), so different sizes of the same source can coexist.</p>
+    </section>
+
+    <section class="block" id="how-it-works">
+      <h2>How it works</h2>
+      <p style="color:#999;margin-top:0">A ~600-line single-file Node server with zero npm dependencies. The browser hits it via plain HTTP; conversions are spawned <code>ffmpeg</code> processes.</p>
+      <div class="hiw-list">
+        <div class="hiw-item">
+          <h4>Zero dependencies</h4>
+          <p>Just Node built-ins (<code>http</code>, <code>fs</code>, <code>path</code>, <code>child_process</code>) — no <code>npm install</code> needed, ever.</p>
+        </div>
+        <div class="hiw-item">
+          <h4>Polling folder watcher</h4>
+          <p>1 Hz poll instead of <code>fs.watch</code> — boring and works identically on macOS, Windows, and Linux.</p>
+        </div>
+        <div class="hiw-item">
+          <h4>3-second size stability</h4>
+          <p>A file is only touched after its size has been unchanged for 3 seconds — partially-copied or still-recording files are never read.</p>
+        </div>
+        <div class="hiw-item">
+          <h4>H.264 fast path</h4>
+          <p>H.264 sources remux to MP4/MOV (<code>-c copy</code>) instead of transcoding — finishes in seconds even on multi-GB files.</p>
+        </div>
+        <div class="hiw-item">
+          <h4>Range-request streaming</h4>
+          <p>The browser's <code>&lt;video&gt;</code> tag seeks into multi-GB files without downloading them — server speaks HTTP 206 Partial Content.</p>
+        </div>
+        <div class="hiw-item">
+          <h4>Runtime encoder detection</h4>
+          <p>On startup, the server probes ffmpeg's available encoders and hides format pills it can't actually produce. No silent failures.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>Limitations</h2>
+      <ul style="color:#aaa;line-height:1.7">
+        <li><strong>WebM and AVIF encoding are slow.</strong> Use MP4 / WebP / JPG if speed matters more than file size.</li>
+        <li><strong>HEVC video sources</strong> require transcoding (not remuxing) to MP4 because Chrome and Firefox don't decode HEVC. Expect minutes per minute of source.</li>
+        <li><strong>One conversion at a time.</strong> Jobs run serially to avoid CPU thrashing. Multiple uploads queue up and process in order.</li>
+        <li><strong>No authentication.</strong> The server binds to <code>localhost</code> by default. If you change <code>PORT</code> to expose it on a LAN, anyone on the network can upload and convert.</li>
+      </ul>
+    </section>
+
+    <section class="block" id="faq">
+      <h2>Frequently asked questions</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary><h3>Is Filebrew free?</h3></summary>
+          <p>Yes. It is 100% free and open-source under the MIT license. There are no quotas, watermarks, paywalls, or subscription fees. Use it for personal or commercial work without obligation.</p>
+        </details>
+        <details class="faq-item">
+          <summary><h3>Does it upload my files to the cloud?</h3></summary>
+          <p>No. Everything runs locally on your machine. The browser interface talks to a Node.js server on <code>localhost</code>. Your files never leave your computer.</p>
+        </details>
+        <details class="faq-item">
+          <summary><h3>What operating systems does it support?</h3></summary>
+          <p>macOS, Windows, and Linux. It requires Node.js 16 or later and <code>ffmpeg</code> + <code>ffprobe</code> installed on your system. See the <a href="#install">Install</a> section for one-line install commands per OS.</p>
+        </details>
+        <details class="faq-item">
+          <summary><h3>What video and audio formats can it convert?</h3></summary>
+          <p><strong>Video output:</strong> MP4, WebM, MOV, MKV, animated GIF. <strong>Audio output:</strong> MP3, M4A, WAV, FLAC. <strong>Input</strong> accepts essentially everything ffmpeg can read — MP4, MOV, WebM, MKV, AVI, M4V, FLV, WMV, 3GP, TS, MP3, M4A, WAV, AAC, FLAC, OGG, OPUS, WMA, and more.</p>
+        </details>
+        <details class="faq-item">
+          <summary><h3>What image formats can it convert?</h3></summary>
+          <p><strong>Image output:</strong> JPG, PNG, WebP, AVIF, BMP, TIFF. <strong>Input:</strong> JPG, JPEG, PNG, WebP, AVIF, GIF, BMP, TIFF, HEIC, HEIF.</p>
+        </details>
+        <details class="faq-item">
+          <summary><h3>Can it resize images automatically?</h3></summary>
+          <p>Yes. The image converter has preset sizes (Thumbnail 200 px, Small 480 px, Medium 800 px, Large 1920 px) plus a custom pixel size option. Aspect ratio is preserved automatically — the longest edge becomes the requested size.</p>
+        </details>
+        <details class="faq-item">
+          <summary><h3>How do I install it?</h3></summary>
+          <p>Install Node.js and ffmpeg, clone the repo, run <code>npm start</code>, open <code>http://localhost:3000</code>. Per-OS install commands are in the <a href="#install">Install section</a> above.</p>
+        </details>
+        <details class="faq-item">
+          <summary><h3>Can I run it on a Raspberry Pi or home server?</h3></summary>
+          <p>Yes. Anywhere Node.js 16+ and ffmpeg run, the converter runs. Set <code>PORT</code> and bind the server to your LAN to use it from your phone or another laptop.</p>
+        </details>
+        <details class="faq-item">
+          <summary><h3>Does it convert MOV from iPhone screen recordings to MP4 for the web?</h3></summary>
+          <p>Yes. iPhone screen recordings are typically HEVC inside a MOV container. The converter detects HEVC and transcodes to H.264 + AAC in an MP4 container so the result plays in Chrome, Firefox, Safari, and Edge.</p>
+        </details>
+        <details class="faq-item">
+          <summary><h3>Is it really free with no catch?</h3></summary>
+          <p>Yes. MIT license, source code on GitHub. Fork it, modify it, ship it commercially — no obligation back to the project.</p>
+        </details>
+      </div>
+    </section>
+
+    <footer>
+      <p>
+        <strong>Filebrew</strong> · by <a href="https://codecrunchlabs.vercel.app" target="_blank" rel="noopener">Code Crunch Labs</a> · MIT-licensed open source · zero npm dependencies<br>
+        <a href="https://github.com/CODE-CRUNCH-LABS/Filebrew" target="_blank" rel="noopener">View on GitHub</a> ·
+        <a href="https://github.com/CODE-CRUNCH-LABS/Filebrew" target="_blank" rel="noopener">Fork the repo</a> ·
+        <a href="https://ffmpeg.org" target="_blank" rel="noopener">Powered by ffmpeg</a>
+      </p>
+    </footer>
+  </div>
+
+  <script>
+    // OS tabs
+    const tabs = document.querySelectorAll('.os-tab');
+    const panes = document.querySelectorAll('.os-pane');
+    function activateOS(os) {
+      tabs.forEach((x) => {
+        const on = x.dataset.os === os;
+        x.classList.toggle('active', on);
+        x.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+      panes.forEach((p) => p.classList.toggle('active', p.dataset.os === os));
+    }
+
+    tabs.forEach((t) => {
+      t.addEventListener('click', () => activateOS(t.dataset.os));
+    });
+
+    // auto-pick the user's OS on first load
+    (function autoPickOS() {
+      const ua = navigator.userAgent || '';
+      let os = 'mac';
+      if (/Windows/.test(ua)) os = 'win';
+      else if (/Linux/.test(ua) && !/Android/.test(ua)) os = 'linux';
+      activateOS(os);
+    })();
+  </script>
+</body>
+</html>
